@@ -1,0 +1,16 @@
+<html><head>
+
+
+
+<title>Conforming HTML 4.01 Transitional Template</title>
+<script src="scripts/prototype.js"></script>
+<script src="scripts/committee_creator.js"></script>
+</head><body>
+<p>Grassroots Politics Made Easy</p>
+<p>You need an organization or two to front your agenda... No problem.</p>
+<form action="#"><button id="gotoit">Generate Support!</button></form>
+<h1 id="newname"> against  and </h1>
+<script type="text/javascript">
+$('gotoit').observe('click', function() { $('newname').update(createCommittee()) });
+</script>
+</body></html>
