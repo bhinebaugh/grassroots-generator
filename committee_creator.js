@@ -32,43 +32,56 @@ againsts = new Array(
 slogans = new Array(
 'Moving America forward.', 'Bringing America together.', 'Keeping America strong.', 'Making America stronger.', 'For a better America.',
 'For a better future.', 'For a brighter tomorrow.', 'Working for the a better country.', 'Democracy at work.', 'Hope for the future.',
-'Change for the better.', 'Common-sense solutions for all.', 'Solving America\'s problems.', 'Working for change.', 'Making democracy work.'
+'Change for the better.', 'Common-sense solutions for all.', 'Solving America\'s problems.', 'Working for change.', 'Making democracy work.',
+'Committed to Improving America'
 );
 
 function select(fromlist, howmany) {
 	var results = new Array();
 	var result_string = '';
-	var options = fromlist;
+	var newword = '';
 	for (i=0; i<howmany; i++) {
-/* 		do {
- * 			randomint = Math.floor( Math.random()* fromlist.length );
- * 		} while ( results.indexOf(randomint) > -1); //randomint is in results Array
- * 		results.push(randomint);
+		do {
+  			randomint = Math.floor( Math.random()* fromlist.length );
+			newword = fromlist[randomint];
+  		} while ( results.include(newword) ); //randomint is in results Array; repeat
+  		results.push(newword);
+		if ( i>0 ) result_string += " and ";
+		result_string += newword;
+/* 		randomint = Math.floor( Math.random()* options.length );
+ * 		new_word = options[randomint];
+ * 		if (i > 0) result_string += " and ";
+ * 		result_string += new_word;
+ * 		options = options.without(new_word);
  */
-		randomint = Math.floor( Math.random()* options.length );
-		new_word = options[randomint];
-		if (i > 0) result_string += " and ";
-		result_string += new_word;
-		options = options.without(new_word);
 
 	}
 	//results.join(' and ');
 	return result_string;
 }
 function createCommittee() {
-	var cname = select(unit);
+	var cname = select(unit, 1);
 	variation = Math.random();
-	if (variation > 0.5) {
-		cname += " for " + select(fors);
-		if (variation > 0.65) {
-			cname += " and " + select(fors);
+	if (variation < 0.5) {
+		// 'for' committee
+		cname += ' for ';
+		if (variation < 0.70) {
+			cname += select(fors, 1);
+		} else {
+			cname += select(fors, 2);
 		}
 	} else {
-		var against1 = select(againsts);
-		cname += " against " + against1;
-		if (variation < 0.2) {
-			cname += " and " + select(againsts);
+		// 'against' committee
+		cname += ' against ';
+		if (variation < 0.25) {
+			cname += select(againsts, 1);
+		} else {
+			cname += select(againsts, 2);
 		}
 	}
 	return cname;
+}
+
+function createSlogan() {
+	return select(slogans, 1);
 }
