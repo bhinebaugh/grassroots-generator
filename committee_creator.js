@@ -13,11 +13,11 @@ unit = new Array(
 'Ordinary People', 'Real Americans', 
 'Senior Citizens', 'Youth', 'Parents',
 'Concerned Citizens', 'Alliance', 'Coalition'
-);  //modifiers Real True Patriotic Concerned
+);  //modifiers Real True Patriotic Concerned-about Committed-to Devout United-for/against
 fors = new Array(
 'Values', 'Freedom', 'Liberty', 'Independence', 'Democracy', 'the Future',
 'Change', 'Progress', 'America', 'Hope', 'Honor', 'Financial Gain',
-'Pride', 'Decency', 'Action', 'Responsibility', 'Reason',
+'Pride', 'Decency', 'Action', 'Responsibility', 'Reason','Greatness',
 'Justice', 'Common Sense', 'Truth', 'Sensible Alternatives',
 'the American Way', 'the American Dream', 'National Unity',
 'Nonpartisan Politics', 'Sanity', 'Wealth', 'Prosperity', 'Tradition',
@@ -25,15 +25,15 @@ fors = new Array(
 );
 againsts = new Array(
 'Waste', 'Fraud', 'Corruption', 'Greed', 'Politicians', 'Slander',
-'Spending', 'Decline', 'Decay', 'Treason', 'Oppression',
+'Spending', 'Decline', 'Decay', 'Treason', 'Oppression','Gridlock',
 'Unamerican Things', 'Hatred', 'Mediocrity', 'Misrepresentation',
-'Propaganda', 'Untruth', 'Cynicism', 'Failure'
+'Propaganda', 'Untruth', 'Cynicism', 'Failure','Mediocrity'
 ); //modifiers False, Malicious, Untrue
 slogans = new Array(
-'Moving America forward.', 'Bringing America together.', 'Keeping America strong.', 'Making America stronger.', 'For a better America.',
-'For a better future.', 'For a brighter tomorrow.', 'Working for the a better country.', 'Democracy at work.', 'Hope for the future.',
+'Moving America forward.', 'Bringing America together.', 'Keeping America strong.', 'A stronger America','Making America stronger.', 'For a better America.','Believe in America','Believing in America\'s potential.',
+'For a better future.', 'For a brighter tomorrow.', 'Working for the a better country.', 'Democracy at work.', 'Hope for the future.','Doing what\'s right for our country.',
 'Change for the better.', 'Common-sense solutions for all.', 'Solving America\'s problems.', 'Working for change.', 'Making democracy work.',
-'Committed to Improving America'
+'Committed to Improving America','Committed to America'
 );
 
 function select(fromlist, howmany) {
