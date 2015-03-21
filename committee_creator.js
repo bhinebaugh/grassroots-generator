@@ -10,7 +10,7 @@ To Do:
 unit = new Array(
 'Committee', 'Taxpayers', 'Citizens', 'Patriots',
 'Fund', 'Commission', 'Americans', 'Voters', 'People',
-'Ordinary People', 'Real Americans', 
+'Ordinary People', 'Real Americans',
 'Senior Citizens', 'Youth', 'Parents',
 'Concerned Citizens', 'Alliance', 'Coalition'
 );  //modifiers Real True Patriotic Concerned-about Committed-to Devout United-for/against
@@ -29,6 +29,7 @@ againsts = new Array(
 'Unamerican Things', 'Hatred', 'Mediocrity', 'Misrepresentation',
 'Propaganda', 'Untruth', 'Cynicism', 'Failure','Mediocrity'
 ); //modifiers False, Malicious, Untrue
+
 slogans = new Array(
 'Moving America forward.', 'Bringing America together.', 'Keeping America strong.', 'A stronger America','Making America stronger.', 'For a better America.','Believe in America','Believing in America\'s potential.',
 'For a better future.', 'For a brighter tomorrow.', 'Working for the a better country.', 'Democracy at work.', 'Hope for the future.','Doing what\'s right for our country.',
@@ -42,9 +43,9 @@ function select(fromlist, howmany) {
 	var newword = '';
 	for (i=0; i<howmany; i++) {
 		do {
-  			randomint = Math.floor( Math.random()* fromlist.length );
+  		var randomint = Math.floor( Math.random()* fromlist.length );
 			newword = fromlist[randomint];
-  		} while ( results.include(newword) ); //randomint is in results Array; repeat
+		} while ( results.indexOf(newword) !== -1 ); //randomint is in results Array; repeat
   		results.push(newword);
 		if ( i>0 ) result_string += " and ";
 		result_string += newword;
@@ -60,28 +61,33 @@ function select(fromlist, howmany) {
 	return result_string;
 }
 function createCommittee() {
-	var cname = select(unit, 1);
+	$('#group').html( select(unit, 1) );
 	variation = Math.random();
 	if (variation < 0.5) {
 		// 'for' committee
-		cname += ' for ';
+		$('#preposition').html('for');
 		if (variation < 0.70) {
-			cname += select(fors, 1);
+			$('#value').html( select(fors, 1) );
 		} else {
-			cname += select(fors, 2);
+			$('#value').html( select(fors, 2) );
 		}
 	} else {
 		// 'against' committee
-		cname += ' against ';
+		$('#preposition').html('against');
 		if (variation < 0.25) {
-			cname += select(againsts, 1);
+			$('#value').html( select(againsts, 1) );
 		} else {
-			cname += select(againsts, 2);
+			$('#value').html( select(againsts, 2) );
 		}
 	}
-	return cname;
 }
 
 function createSlogan() {
 	return select(slogans, 1);
 }
+
+$('#generate').on('click', function() {
+		console.log('clicked');
+		createCommittee();
+		$('#slogan').html(createSlogan());
+	});

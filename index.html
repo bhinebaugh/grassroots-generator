@@ -1,21 +1,22 @@
-<html><head>
+<!-- doctype -->
+<html>
+<head>
 <title>Grassroots Political Organizations - Name Generator</title>
-<script src="https://www.google.com/jsapi?key=ABQIAAAACZx_MKvaGbpLkIMGPGiiQxRr4VXpfKyoUd32m7N-BWiUCFQaORStsatzSgeG5MSo008yg9hhLdV4Sg" type="text/javascript"></script>
-<script type="text/javascript">google.load("prototype", "1.7.0.0");</script>
-<script src="committee_creator.js"></script>
 </head>
 
 <body>
 <h1>Grassroots Politics Made Easy</h1>
-<p>Money equals speech, but the average person doesn't want to hear you talk all day. So if you have money to spend and political speech to express, 
+<p>Money equals speech, but the average person doesn't want to hear you talk all day. So if you have money to spend and political speech to express,
 use this tool to help spread your message through the guise of as many independent expenditure organizations as needed.</p>
-<form action="#"><button id="gotoit">Generate Support!</button></form>
-<h1 id="newname">(Name here!)</h1>
+<a id="generate" href="#">Generate Support!</a>
+<h2 id="newname">
+	<span id="group"></span>
+	<span id="preposition"></span>
+	<span id="value"></span>
+</h1>
 <p id='slogan'></p>
-<script type="text/javascript">
-$('gotoit').observe('click', function() { 
-		$('newname').update(createCommittee()) ;
-		$('slogan').update(createSlogan());
-	});
-</script>
-</body></html>
+</body>
+<script src="zepto.min.js"></script>
+<script src="committee_creator.js"></script>
+
+</html>
