@@ -17,12 +17,12 @@ unit = new Array(
 //modifiers Real True Patriotic Concerned-about Committed-to Devout United-for/against
 adjectives = {
 	positive: [
-		'patriotic', 'citizen', 'commonsense', 'independent', 'real', 'nonpartisan',
-		'hopeful', 'future', 'Sensible', 'Reasonable', 'National', 'New', 'American', 'Traditional'
+		'Patriotic', 'Citizen', 'Commonsense', 'Independent', 'Real', 'Nonpartisan',
+		'Hopeful', 'Future', 'Sensible', 'Reasonable', 'National', 'New', 'American', 'Traditional'
 		],
 	negative: [
-		'corrupt', 'corrupting', 'insider', 'bureaucratic', 'malicious', 'deceptive',
-		'unamerican', 'false', 'partisan', 'political', 'wasteful'
+		'Corrupt', 'Corrupting', 'Cynical', 'Insider', 'Bureaucratic', 'Malicious', 'Deceptive',
+		'Unamerican', 'False', 'Partisan', 'Political', 'Wasteful'
 		]
 }
 fors = new Array(
@@ -41,9 +41,9 @@ againsts = new Array(
 ); // 'Hatred', 'Treason','Unamerican Things',
 
 slogans = new Array(
-'Moving America forward.', 'Bringing America together.', 'Keeping America strong.', 'A stronger America','Making America stronger.', 'For a better America.','Believe in America','Believing in America\'s potential.',
-'For a better future.', 'For a brighter tomorrow.', 'Working for the a better country.', 'Democracy at work.', 'Hope for the future.','Doing what\'s right for our country.',
-'Change for the better.', 'Common-sense solutions for all.', 'Solving America\'s problems.', 'Working for change.', 'Making democracy work.',
+'Moving America forward', 'Bringing America together', 'Keeping America strong', 'A stronger America','Making America stronger', 'For a better America','Believe in America','Believing in America\'s potential',
+'For a better future', 'For a brighter tomorrow', 'Working for the a better country', 'Democracy at work', 'Hope for the future','Doing what\'s right for our country',
+'Change for the better', 'Common-sense solutions for all', 'Solving America\'s problems', 'Working for change', 'Making democracy work',
 'Committed to Improving America','Committed to America', 'It\'s about time', 'Moving forward, today'
 );
 
