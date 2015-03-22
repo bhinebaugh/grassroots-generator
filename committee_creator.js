@@ -13,28 +13,38 @@ unit = new Array(
 'Ordinary People', 'Real Americans',
 'Senior Citizens', 'Youth', 'Parents',
 'Concerned Citizens', 'Alliance', 'Coalition'
-);  //modifiers Real True Patriotic Concerned-about Committed-to Devout United-for/against
-fors = new Array(
-'Values', 'Freedom', 'Liberty', 'Independence', 'Democracy', 'the Future',
-'Change', 'Progress', 'America', 'Hope', 'Honor', 'Financial Gain',
-'Pride', 'Decency', 'Action', 'Responsibility', 'Reason','Greatness',
-'Justice', 'Common Sense', 'Truth', 'Sensible Alternatives',
-'the American Way', 'the American Dream', 'National Unity',
-'Nonpartisan Politics', 'Sanity', 'Wealth', 'Prosperity', 'Tradition',
-'Clarity', 'Uniformity', 'Victory', 'Happiness', 'Sufficiency'
 );
+//modifiers Real True Patriotic Concerned-about Committed-to Devout United-for/against
+adjectives = {
+	positive: [
+		'patriotic', 'citizen', 'commonsense', 'independent', 'real', 'nonpartisan',
+		'hopeful', 'future', 'Sensible', 'Reasonable', 'National', 'New', 'American', 'Traditional'
+		],
+	negative: [
+		'corrupt', 'corrupting', 'insider', 'bureaucratic', 'malicious', 'deceptive',
+		'unamerican', 'false', 'partisan', 'political', 'wasteful'
+		]
+}
+fors = new Array(
+'Values', 'Freedom', 'Liberty', 'Independence', 'Democracy', 'Century',
+'Change', 'Progress', 'America', 'Hope', 'Honor', 'Financial Gain',
+'Pride', 'Decency', 'Action', 'Responsibility', 'Reason', 'Greatness',
+'Justice', 'Common Sense', 'Truth', 'Alternatives', 'Unity',
+'Nonpartisan Politics', 'Sanity', 'Wealth', 'Prosperity', 'Tradition',
+'Clarity', 'Uniformity', 'Victory', 'Happiness', 'Self-Sufficiency'
+); //'the American Way', 'the American Dream', 'the Future',
 againsts = new Array(
 'Waste', 'Fraud', 'Corruption', 'Greed', 'Politicians', 'Slander',
-'Spending', 'Decline', 'Decay', 'Treason', 'Oppression','Gridlock',
-'Unamerican Things', 'Hatred', 'Mediocrity', 'Misrepresentation',
-'Propaganda', 'Untruth', 'Cynicism', 'Failure','Mediocrity'
-); //modifiers False, Malicious, Untrue
+'Spending', 'Decline', 'Decay', 'Oppression','Gridlock',
+'Mediocrity', 'Misrepresentation',
+'Propaganda', 'Untruth', 'Cynicism', 'Failure','Mediocrity', 'Excess'
+); // 'Hatred', 'Treason','Unamerican Things',
 
 slogans = new Array(
 'Moving America forward.', 'Bringing America together.', 'Keeping America strong.', 'A stronger America','Making America stronger.', 'For a better America.','Believe in America','Believing in America\'s potential.',
 'For a better future.', 'For a brighter tomorrow.', 'Working for the a better country.', 'Democracy at work.', 'Hope for the future.','Doing what\'s right for our country.',
 'Change for the better.', 'Common-sense solutions for all.', 'Solving America\'s problems.', 'Working for change.', 'Making democracy work.',
-'Committed to Improving America','Committed to America'
+'Committed to Improving America','Committed to America', 'It\'s about time', 'Moving forward, today'
 );
 
 function select(fromlist, howmany) {
@@ -62,20 +72,23 @@ function select(fromlist, howmany) {
 }
 function createCommittee() {
 	$('#group').html( select(unit, 1) );
-	variation = Math.random();
+	var variation = Math.random();
+	var modifier = '';
 	if (variation < 0.5) {
 		// 'for' committee
 		$('#preposition').html('for');
-		if (variation < 0.70) {
-			$('#value').html( select(fors, 1) );
+		if (variation < 0.45) {
+			if (variation < 0.35) modifier = select(adjectives.positive, 1) + ' ';
+			$('#value').html( modifier + select(fors, 1) );
 		} else {
 			$('#value').html( select(fors, 2) );
 		}
 	} else {
 		// 'against' committee
 		$('#preposition').html('against');
-		if (variation < 0.25) {
-			$('#value').html( select(againsts, 1) );
+		if (variation > 0.65) {
+			if (variation > 0.7) modifier = select(adjectives.negative, 1) + ' ';
+			$('#value').html( modifier + select(againsts, 1) );
 		} else {
 			$('#value').html( select(againsts, 2) );
 		}
