@@ -99,8 +99,30 @@ function createSlogan() {
 	return select(slogans, 1);
 }
 
+colorCombos = [
+	{background:'#932525', main:'white', secondary:'#ccb785'},
+	{background:'#254193', main:'white', secondary:'#d5c12c'},
+	{background:'white', main:'#468c69', secondary:'#8f7190'},
+	{background:'#0e152d', main:'#bfc3de', secondary:'#84858f'},
+	{background:'#f3ed75', main:'#662c6c', secondary:'#c07c4a'},
+	{background:'#eaf0b5', main:'#c04125', secondary:'#a88466'},
+]
+
+// typography adjustments:
+// font-size, font-style, text-align
+
+function adjustDesign() {
+	colorScheme = colorCombos[ Math.floor(Math.random()*colorCombos.length) ]
+	$('.output').css({
+		background: colorScheme.background,
+		color: colorScheme.main
+	});
+	$('#slogan').css({ color: colorScheme.secondary });
+}
+
 $('#generate').on('click', function() {
 		console.log('clicked');
 		createCommittee();
+		adjustDesign();
 		$('#slogan').html(createSlogan());
 	});
