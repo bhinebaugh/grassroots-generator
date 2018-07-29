@@ -102,14 +102,38 @@ function createSlogan() {
 colorCombos = [
 	{background:'#932525', main:'white', secondary:'#ccb785'},
 	{background:'#254193', main:'white', secondary:'#d5c12c'},
-	{background:'white', main:'#468c69', secondary:'#8f7190'},
+	{background:'ebf8bb', main:'#468c69', secondary:'#8f7190'},
 	{background:'#0e152d', main:'#bfc3de', secondary:'#84858f'},
-	{background:'#f3ed75', main:'#662c6c', secondary:'#c07c4a'},
+	{background:'linear-gradient(#f0ffa6, #e9c96d)', main:'#874d8d', secondary:'#c07c4a'},
 	{background:'#eaf0b5', main:'#c04125', secondary:'#a88466'},
+	{background:'dbd7f5', main:'#547d86', secondary:'#bd7878'},
+	{background:'linear-gradient(200deg, rgb(89, 89, 156), rgb(42, 42, 117))', main:'#fff', secondary:'rgb(143, 143, 216)'},
+	{background:'linear-gradient(340deg, #2b544a, #2a7533)', main:'#fff', secondary:'#bcd24c'},
+	{background:'linear-gradient(174deg,#e49f9a, rgb(240, 231, 181) 29%,#e36666 78%)', main:'#4f447e', secondary:'#68525f'},
+	{background:'linear-gradient(#eaf0b5,#f8cb5e)', main:'#c04125', secondary:'#a88466'},
+	// stripes
+	{
+		background:'linear-gradient(140deg, white 65%, white 70%, red 70%, red 75%, white 75%, white 80%, red 80%, red 85%, white 85%, white 90%, red 90%, red 95%, white 95%)',
+		main:'#3bbde0',
+		secondary:'#ce7272'
+	},
+	// fading stripes
+	{
+		background:'linear-gradient(140deg, white 50%, #fff7f7 50%, #fed0d0 55%, white 55%, white 60%, #fbbaba 60%, #ff6e6e 65%, white 65%, white 70%, #ed8e8e 70%, #ff3838 75%, white 75%, white 80%, #f96464 80%, #ef1c1c 85%, white 85%, white 90%, #ff5b5b 90%, red 95%, white 95%)',
+		main:'#3bbde0',
+		secondary:'#ce7272'
+	},
+	// more stripes
+	{
+		background:'linear-gradient(130deg, white 55%, #ff8484 63%, white 65%, white 67%, #fb8d8d 70%, #ff3e3e 73%, white 75%, white 78%, #ff3535 82%, #ff3636 84%, white 86%, white 90%, red 96%)',
+		main:'#1f4668',
+		secondary:'#3a5d86'
+	}
 ]
-
 // typography adjustments:
 // font-size, font-style, text-align
+fontStacks = []
+decorations = [] // borders, frames
 
 function adjustDesign() {
 	colorScheme = colorCombos[ Math.floor(Math.random()*colorCombos.length) ]
