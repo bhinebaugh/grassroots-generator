@@ -8,43 +8,51 @@ To Do:
 	tack on a generic slogan
 **/
 unit = new Array(
-'Committee', 'Taxpayers', 'Citizens', 'Patriots',
-'Fund', 'Commission', 'Americans', 'Voters', 'People',
-'Ordinary People', 'Real Americans',
-'Senior Citizens', 'Youth', 'Parents',
-'Concerned Citizens', 'Alliance', 'Coalition'
+	'Committee', 'Taxpayers', 'Citizens', 'Patriots',
+	'Fund', 'Commission', 'Americans', 'Voters', 'People',
+	'Ordinary People', 'Real Americans',
+	'Senior Citizens', 'Youth', 'Parents',
+	'Concerned Citizens', 'Alliance', 'Coalition'
 );
+// Prefixes
+// Concerned, Informed
 //modifiers Real True Patriotic Concerned-about Committed-to Devout United-for/against
 adjectives = {
 	positive: [
-		'Patriotic', 'Citizen', 'Commonsense', 'Independent', 'Real', 'Nonpartisan',
-		'Hopeful', 'Future', 'Sensible', 'Reasonable', 'National', 'New', 'American', 'Traditional'
+		'Patriotic', 'Citizen', 'Commonsense', 'Independent', 'Real', 'Nonpartisan', 'Constitutional',
+		'Hopeful', 'Future', 'Sensible', 'Reasonable', 'National', 'New', 'American', 'Traditional',
+		'Unifying', 'Rational', 'Ethical', 'Balanced'
 		],
 	negative: [
 		'Corrupt', 'Corrupting', 'Cynical', 'Insider', 'Bureaucratic', 'Malicious', 'Deceptive',
-		'Unamerican', 'False', 'Partisan', 'Political', 'Wasteful'
+		'Unamerican', 'False', 'Partisan', 'Political', 'Wasteful', 'Harmful',
+		'Fake', 'Inefficient', 'Divisive', 'Undue', 'Extravagant',
 		]
 }
 fors = new Array(
-'Values', 'Freedom', 'Liberty', 'Independence', 'Democracy', 'Century',
-'Change', 'Progress', 'America', 'Hope', 'Honor', 'Financial Gain',
-'Pride', 'Decency', 'Action', 'Responsibility', 'Reason', 'Greatness',
-'Justice', 'Common Sense', 'Truth', 'Alternatives', 'Unity',
-'Nonpartisan Politics', 'Sanity', 'Wealth', 'Prosperity', 'Tradition',
-'Clarity', 'Uniformity', 'Victory', 'Happiness', 'Self-Sufficiency'
+	'Values', 'Freedom', 'Liberty', 'Independence', 'Democracy', 
+	'Change', 'Progress', 'America', 'Hope', 'Honor', 'Financial Gain',
+	'Pride', 'Decency', 'Action', 'Responsibility', 'Reason', 'Greatness',
+	'Justice', 'Common Sense', 'Truth', 'Alternatives', 'Unity', 'National Investment',
+	'Nonpartisan Politics', 'Sanity', 'Wealth', 'Prosperity', 'Tradition',
+	'Clarity', 'Uniformity', 'Victory', 'Happiness', 'Self-Sufficiency',
+	'Power', 'Leadership', 'Integrity'
 ); //'the American Way', 'the American Dream', 'the Future',
+// /+-adj/ Government 'Century',
 againsts = new Array(
-'Waste', 'Fraud', 'Corruption', 'Greed', 'Politicians', 'Slander',
-'Spending', 'Decline', 'Decay', 'Oppression','Gridlock',
-'Mediocrity', 'Misrepresentation',
-'Propaganda', 'Untruth', 'Cynicism', 'Failure','Mediocrity', 'Excess'
-); // 'Hatred', 'Treason','Unamerican Things',
+	'Waste', 'Fraud', 'Corruption', 'Greed', 'Politicians', 'Slander',
+	'Spending', 'Decline', 'Oppression','Gridlock',
+	'Mediocrity', 'Misrepresentation', 'Incompetence', 'Spending',
+	'Propaganda', 'Untruth', 'Cynicism', 'Failure', 'Mediocrity', 'Excess',
+	'Losing',
+); // 'Hatred', 'Treason','Unamerican Things',  'Decay',
 
 slogans = new Array(
-'Moving America forward', 'Bringing America together', 'Keeping America strong', 'A stronger America','Making America stronger', 'For a better America','Believe in America','Believing in America\'s potential',
-'For a better future', 'For a brighter tomorrow', 'Working for the a better country', 'Democracy at work', 'Hope for the future','Doing what\'s right for our country',
-'Change for the better', 'Common-sense solutions for all', 'Solving America\'s problems', 'Working for change', 'Making democracy work',
-'Committed to Improving America','Committed to America', 'It\'s about time', 'Moving forward, today'
+	'Moving America forward', 'Bringing America together', 'Keeping America strong', 'A stronger America','Making America stronger', 'For a better America','Believe in America','Believing in America\'s potential', 'The right things for America',
+	'For a better future', 'For a brighter tomorrow', 'Working for a better country', 'Democracy at work', 'Hope for the future','Doing what\'s right for our country', 'A vision for the future','Envisioning a better America',
+	'Change for the better', 'Common-sense solutions for all', 'Solving America\'s problems', 'Working for change', 'Making democracy work',
+	'Committed to Improving America','Committed to America', 'It\'s about time', 'Moving forward, today', 'Sensible policy for all', 'Needed leadership in troubled times',
+	'Advocating for America', 'Reliable ideas from trusted sources', 'New thinking for new challenges', 'Restoring trust in our democracy'
 );
 
 function select(fromlist, howmany) {
@@ -76,7 +84,7 @@ function createCommittee() {
 	var modifier = '';
 	if (variation < 0.5) {
 		// 'for' committee
-		$('#preposition').html('for');
+		$('#preposition').html('for'); // 'in support of'
 		if (variation < 0.45) {
 			if (variation < 0.35) modifier = select(adjectives.positive, 1) + ' ';
 			$('#value').html( modifier + select(fors, 1) );
@@ -111,6 +119,14 @@ colorCombos = [
 	{background:'linear-gradient(340deg, #2b544a, #2a7533)', main:'#fff', secondary:'#bcd24c'},
 	{background:'linear-gradient(174deg,#e49f9a, rgb(240, 231, 181) 29%,#e36666 78%)', main:'#4f447e', secondary:'#68525f'},
 	{background:'linear-gradient(#eaf0b5,#f8cb5e)', main:'#c04125', secondary:'#a88466'},
+	{background: 'linear-gradient(-45deg,#4504da,#ff0353)', main:'white', secondary:'#aaa'},
+	{background:'#9c0000', main:'#fff799', secondary:'#ccc8c0'},
+	// borders
+	{
+		background:'linear-gradient(#f55 0px, #f55 8%, red 8%, red 92%, #f55 92%, #f55 100%)',
+		main:'#fff799',
+		secondary:'#ccc8c0'
+	},	
 	// stripes
 	{
 		background:'linear-gradient(140deg, white 65%, white 70%, red 70%, red 75%, white 75%, white 80%, red 80%, red 85%, white 85%, white 90%, red 90%, red 95%, white 95%)',
@@ -132,20 +148,34 @@ colorCombos = [
 ]
 // typography adjustments:
 // font-size, font-style, text-align
-fontStacks = []
-decorations = [] // borders, frames
+fontStacks = [
+	'“Arial Black”, “Arial Bold”, Gadget, sans-serif',
+	'Arial, "Helvetica Neue", Helvetica, sans-serif',
+	'"Gill Sans", Calibri, sans-serif',
+	'Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif',
+	'"Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif',
+	'Cambria, "Hoefler Text", Utopia, "Liberation Serif", "Nimbus Roman No9 L Regular", Times, "Times New Roman", serif',
+	'Constantia, "Lucida Bright", Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif',
+]
+fontSizes = [1, 1.2, 1.4]
+decorations = [
+
+] // borders, frames
 
 function adjustDesign() {
 	colorScheme = colorCombos[ Math.floor(Math.random()*colorCombos.length) ]
+	font = fontStacks[ Math.floor(Math.random()*fontStacks.length) ]
+	size = fontSizes[ Math.floor(Math.random()*3) ].toString() + "em"
 	$('.output').css({
 		background: colorScheme.background,
-		color: colorScheme.main
+		color: colorScheme.main,
+		fontFamily: font
 	});
 	$('#slogan').css({ color: colorScheme.secondary });
+	$('#value').css({ fontSize: size })
 }
 
 $('#generate').on('click', function() {
-		console.log('clicked');
 		createCommittee();
 		adjustDesign();
 		$('#slogan').html(createSlogan());
